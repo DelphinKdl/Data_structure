@@ -38,6 +38,32 @@ Node *add (Node * head, int item){
     }
     return head;
 }
+
+Node * delete_node (Node *head, int index) {
+
+    Node * temp = head ;
+    if (head == NULL) {
+
+        cout<<"List is empty"<<endl; 
+        return head ;
+    } 
+    if (index == 0 ){
+        head = temp->next ; 
+        return head;
+    }
+    for (int i = 0 ;  i<index-2; i++ ) {
+        temp = temp->next ; 
+    }
+    Node *temp2;
+
+   temp2 = temp->next ; 
+   temp->next = temp2->next ; 
+   delete(temp2);
+
+
+    return head ; 
+
+}
 void print(Node * head) {
     Node * temp = head; 
     while(temp != NULL) {
@@ -56,6 +82,10 @@ int main () {
     head = insert_at_end(head,10);
     head = insert_at_end(head,13);
     head = insert_at_end(head,15);
+    head = insert_at_end(head,17);
+    head = insert_at_end(head,18);
+    head = insert_at_end(head,20);
+    head = delete_node(head,0);
     print(head);
 
 }
