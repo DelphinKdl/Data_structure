@@ -5,7 +5,25 @@ struct Node {
     Node * next ; 
 }; 
 
+Node * insert_at_end(Node * head, int item) {
+    Node *temp = new Node(); 
+    
+    temp->data = item ;
+    temp->next = NULL ; 
 
+    if (head == NULL) {
+        temp->next = head ; 
+        head = temp ;
+        return head; 
+    }
+    Node * temp2 = head ; 
+
+    while (temp2->next != NULL) {
+        temp2 = temp2->next ; 
+    }
+    temp2->next = temp ;
+    return head ; 
+}
 Node *add (Node * head, int item){
     Node * temp = new Node();
     temp->data = item ; 
@@ -30,10 +48,14 @@ void print(Node * head) {
 }
 int main () {
     Node * head = NULL; 
-    head = add(head,10);
-    head = add(head,12);
-    head = add(head,14);
-    head = add(head,13);
+    // head = add(head,10);
+    // head = add(head,12);
+    // head = add(head,14);
+    // head = add(head,13);
+
+    head = insert_at_end(head,10);
+    head = insert_at_end(head,13);
+    head = insert_at_end(head,15);
     print(head);
 
 }
