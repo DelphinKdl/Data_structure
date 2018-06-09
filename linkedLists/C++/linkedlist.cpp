@@ -96,8 +96,19 @@ void printReversed(Node * head) {
     printReversed(head->next);
         cout<<head->data<<endl;
 }
+Node * head ; 
+void reverse_using_recursion(Node * p) {
+     if (head->next == NULL) {
+         head = p ; 
+         return ; 
+     } 
+     reverse_using_recursion(p->next);
+     Node * q = p->next; 
+     q->next= p ; 
+     p->next = NULL;
+}
 int main () {
-    Node * head = NULL; 
+    // Node * head = NULL; 
 
     head = insert_at_end(head,10);
     head = insert_at_end(head,13);
@@ -106,9 +117,11 @@ int main () {
     head = insert_at_end(head,18);
     head = insert_at_end(head,20);
 
-    head = reverse_LS(head);
-    head = reverse_LS(head); // Reverse it bsck to where it is.
-    printReversed(head);
+    // head = reverse_LS(head);
+    // head = reverse_LS(head); // Reverse it bsck to where it is.
+    // printReversed(head);
+    Node *p = head ; 
+    reverse_using_recursion(p);
 
     // print(head);
 
