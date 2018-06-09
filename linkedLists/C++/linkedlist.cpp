@@ -72,12 +72,23 @@ void print(Node * head) {
     }
 
 }
+Node * reverse_LS(Node * head) {
+    // Reversing a list.
+    Node * temp = head ; 
+    Node * next; 
+    Node * before = NULL ; 
+    while (temp != NULL) {
+        next = temp->next; 
+        temp->next = before ;
+        before = temp ;  // stoers the address. 
+        temp = next ; 
+
+    }
+    head  = before ;
+    return head; 
+}
 int main () {
     Node * head = NULL; 
-    // head = add(head,10);
-    // head = add(head,12);
-    // head = add(head,14);
-    // head = add(head,13);
 
     head = insert_at_end(head,10);
     head = insert_at_end(head,13);
@@ -85,7 +96,8 @@ int main () {
     head = insert_at_end(head,17);
     head = insert_at_end(head,18);
     head = insert_at_end(head,20);
-    head = delete_node(head,0);
+
+    head = reverse_LS(head);
     print(head);
 
 }
