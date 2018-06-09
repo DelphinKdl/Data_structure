@@ -87,6 +87,15 @@ Node * reverse_LS(Node * head) {
     head  = before ;
     return head; 
 }
+void printReversed(Node * head) {
+
+    if (head == NULL) {
+        return ; 
+    }
+
+    printReversed(head->next);
+        cout<<head->data<<endl;
+}
 int main () {
     Node * head = NULL; 
 
@@ -98,6 +107,9 @@ int main () {
     head = insert_at_end(head,20);
 
     head = reverse_LS(head);
-    print(head);
+    head = reverse_LS(head); // Reverse it bsck to where it is.
+    printReversed(head);
+
+    // print(head);
 
 }
