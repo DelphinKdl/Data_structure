@@ -28,13 +28,29 @@ void printForward(Node * head) {
     }
     cout<<endl;
 }
-Node * Insert_at_nth (Node * head, int index) {
+Node * Insert_at_nth (Node * head, int data ,int index) {
     // TODO 
+    // insert in the beg
+    Node * newNode = new Node(); 
+    newNode-> data  = data ; 
+    newNode->next = NULL ; 
+    newNode->prev = NULL ; 
+
+    if (index == 1){
+        if (head == NULL) {
+            head= newNode ; 
+            return head ; 
+        }
+        newNode->next = head ;
+        head->prev = newNode; 
+        head= newNode ; 
+    }
     return head ; 
 }
 
 Node * remove_at_nth(Node * head, int index) {
     //TODO
+    return head ; 
 }
 
 Node * insert(Node * head, int data){
@@ -62,6 +78,8 @@ Node * head = NULL ;
 head = insert(head, 10);
 head = insert(head, 12);
 head = insert(head, 13);
+head = Insert_at_nth(head,101,1);
+head = Insert_at_nth(head,2001,1);
 printForward(head);
 printBackwards(head);
  }
