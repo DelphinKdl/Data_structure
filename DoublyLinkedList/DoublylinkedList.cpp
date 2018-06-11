@@ -28,6 +28,15 @@ void printForward(Node * head) {
     }
     cout<<endl;
 }
+Node * Insert_at_nth (Node * head, int index) {
+    // TODO 
+    return head ; 
+}
+
+Node * remove_at_nth(Node * head, int index) {
+    //TODO
+}
+
 Node * insert(Node * head, int data){
     Node * newNode = new Node();
     newNode->data = data; 
