@@ -44,7 +44,21 @@ Nodes under the root are called "children".
 Leaves or frontier, are the nodes who do not have children.
 
 
-Height the length of the longest path from root to a leafs.
+Height the length of the longest path from root to a leaf. This is the height of the tree.
 
 
-Tree can be called a recursive data structure since a the sub-parent can form a whole new tree. Recursive data structure a sub-tree of the whole tree can form a tree itself. 
+Height of a node x is the path from this node x to the longest path to a leaf.
+
+
+Tree can be called a recursive data structure since a the sub-parent can form a whole new tree. Recursive data structure a sub-tree of the whole tree can form a tree itself.
+
+
+
+Depth of a certain node. So, the depth of node X is the length of the path from the root to this node X.
+
+
+Depth of the root node is ZERO or o :).
+
+
+
+Binary tree. This is the most famous. It is a tree representation in which each node has at most 2 node or less/
