@@ -29,7 +29,7 @@ and more
 There are many applications in different computer science domains that use trees such as artificial intelligence, security,
 networking, compilers, graphics, and many more.
 
-Operating system uses tree in file systems.
+Operating system uses a tree in file systems.
 
 Word dictionary uses tries for searching easier.
 
@@ -40,7 +40,7 @@ and many more.
 A tree composes of a collection of entities called "nodes", these nodes are connected to each other with "edge/link" which creates the whole hierarchy of a tree.
 
 
-The top most node is called "ROOT", it a special node in the tree.
+The topmost node is called "ROOT", it a special node in the tree.
 
 
 Nodes under the root are called "children".
@@ -49,27 +49,27 @@ Nodes under the root are called "children".
 Leaves or frontier, are the nodes who do not have children.
 
 
-Height the length of the longest path from root to a leaf. This is the height of the tree.
+The height the length of the longest path from the root to a leaf. This is the height of the tree.
 
 
-Height of a node x is the path from this node x to the longest path to a leaf.
+A height of a node x is the path from this node x to the longest path to a leaf.
 
 
-Tree can be called a recursive data structure since a the sub-parent can form a whole new tree. Recursive data structure a sub-tree of the whole tree can form a tree itself.
-
-
-
-Depth of a certain node. So, the depth of node X is the length of the path from the root to this node X.
-
-
-Depth of the root node is ZERO or o :).
+A tree can be called a recursive data structure since a the sub-parent can form a whole new tree. Recursive data structure a sub-tree of the whole tree can form a tree itself.
 
 
 
-Binary tree. This is the most famous. It is a tree representation in which each node has at most 2 node or less.
+A depth of a certain node. So, the depth of node X is the length of the path from the root to this node X.
 
 
-Complete binary tree is a  tree that all of their children exactly  the frontier/leafs have exactly 2 children. Or, If all levels except the last level are completely filled. Number of node in each level is 2 ^i  where i represents the level number. The number of nodes in the whole prefect tree is 2^0 + ... + 2 ^h where h  is the height of the tree.
+The depth of the root node is ZERO or o :).
 
 
-balanced binary tree is  when we have the difference of height of left and right subtrees for every node is is not more than k (most 1)
+
+Binary tree. This is the most famous. It is a tree representation in which each node has at most 2 nodes or less.
+
+
+A complete binary tree is a  tree that all of their children exactly the frontier/ leaves have exactly 2 children. Or, If all levels except the last level are completely filled. The number of nodes in each level is 2 ^ I where I represent the level number. The number of nodes in the whole perfect tree is 2^0 + ... + 2 ^h where h  is the height of the tree.
+
+
+a balanced binary tree is  when we have the difference of height of left and right subtrees for every node is not more than k (most 1)
