@@ -16,10 +16,6 @@ Node * push (Node* head, int data){
     newNode->next = NULL ;
 
 
-    if (head == NULL) {
-        head = newNode ;
-        return newNode ; 
-    } 
     newNode->next = head ; 
     head = newNode ; 
     return head ; 
