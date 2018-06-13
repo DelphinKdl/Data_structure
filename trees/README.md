@@ -29,6 +29,11 @@ and more
 There are many applications in different computer science domains that use trees such as artificial intelligence, security,
 networking, compilers, graphics, and many more.
 
+Operating system uses tree in file systems.
+
+Word dictionary uses tries for searching easier.
+
+and many more.
 
 ## Properties.
 
@@ -61,4 +66,10 @@ Depth of the root node is ZERO or o :).
 
 
 
-Binary tree. This is the most famous. It is a tree representation in which each node has at most 2 node or less/
+Binary tree. This is the most famous. It is a tree representation in which each node has at most 2 node or less.
+
+
+Complete binary tree is a  tree that all of their children exactly  the frontier/leafs have exactly 2 children. Or, If all levels except the last level are completely filled. Number of node in each level is 2 ^i  where i represents the level number. The number of nodes in the whole prefect tree is 2^0 + ... + 2 ^h where h  is the height of the tree.
+
+
+balanced binary tree is  when we have the difference of height of left and right subtrees for every node is is not more than k (most 1)
