@@ -129,7 +129,7 @@ Space complexity is <code>O(n)</code> which is determined by the nodes in the  <
  
  - Postorder: <Left><Right><Visit>
  
- - 2-1: We know in Preorder the traversal is like this <Visit><Left><Right>, so the algorithm is as follows,
+ - 2-1: We know in Preorder algorithm, the traversal is like this <Visit><Left><Right>, so the algorithm is as follows,
  
  1- Visit a root.
  
@@ -148,5 +148,54 @@ if (root == NULL) return ;
 cout<<root->data<<" ";
 PreOrder(root->left);
 PreOrder(root->right);
+}
+```
+
+
+- 2-2: We know in Inorder algorithm, the traversal is like this <Left><Visit><Right>, so the algorithm is as follows,
+
+1- Recurse on the left sub-tree.
+
+2-  Visit a root.
+
+3- Recurse on the right sub-tree.
+
+
+
+The source code for it.
+
+```c++
+void Inorder (Node * root){
+if (root == NULL) {
+return;
+}
+Inorder(root->left);
+cout<<root->data<<" ";
+Inorder(root->right);
+return;
+}
+```
+
+
+- 2-3: We know in Postorder algorithm, the traversal is like this <Left><Right><Visit>, so the algorithm is as follows,
+
+1- Recurse on the left sub-tree.
+
+2-   Recurse on the right sub-tree. Visit a root.
+
+3- Visit a root.
+
+
+The source code for it.
+
+```c++
+void PostOrder (Node * root){
+if (root == NULL) {
+return;
+}
+PostOrder(root->left);
+PostOrder(root->right);
+cout<<root->data<<" ";
+return;
 }
 ```

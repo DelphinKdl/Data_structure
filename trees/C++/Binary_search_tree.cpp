@@ -48,11 +48,48 @@ void levelOrder (Node * root) {
     }
 }
 
+
+
+void PreOrder(Node * root){
+    if (root == NULL) return ;
+    
+    cout<<root->data<<" ";
+    PreOrder(root->left);
+    PreOrder(root->right);
+}
+
+void Inorder (Node * root){
+    if (root == NULL) {
+        return;
+    }
+    Inorder(root->left);
+    cout<<root->data<<" ";
+    Inorder(root->right);
+    return;
+}
+
+void PostOrder (Node * root){
+    if (root == NULL) {
+        return;
+    }
+    PostOrder(root->left);
+    PostOrder(root->right);
+    cout<<root->data<<" ";
+    return;
+}
+
+char FindMinRec(Node * root){
+        if (root->left == NULL){
+            return root->data;
+        }
+       return  FindMinRec(root->left);
+}
+
 char FindMinIter(Node * root){
-//    if (root == NULL){
-//        return root->data;
-//    }
-//   return  FindMin(root->left);
+    //    if (root == NULL){
+    //        return root->data;
+    //    }
+    //   return  FindMin(root->left);
     
     // Iterative solution
     
@@ -64,19 +101,6 @@ char FindMinIter(Node * root){
     return current->data;
 }
 
-void PreOrder(Node * root){
-    if (root == NULL) return ;
-    
-    cout<<root->data<<" ";
-    PreOrder(root->left);
-    PreOrder(root->right);
-}
-char FindMinRec(Node * root){
-        if (root->left == NULL){
-            return root->data;
-        }
-       return  FindMinRec(root->left);
-}
 
 int main () {
     Node * root = NULL ;
@@ -85,11 +109,11 @@ int main () {
     root = insert('B', root);
     root = insert('A', root);
     root = insert('C', root);
-     root = insert('E', root);
-     root = insert('J', root);
-     root = insert('G', root);
-     root = insert('K', root);
-     root = insert('I', root);
+    root = insert('E', root);
+    root = insert('J', root);
+    root = insert('G', root);
+    root = insert('K', root);
+    root = insert('I', root);
     root = insert('H', root);
    char x =  FindMinIter(root);
    char y =  FindMinRec(root);
@@ -99,4 +123,13 @@ int main () {
 //
     cout<<"PreORder traversal"<<endl;
     PreOrder(root);
+    
+    cout<<"InORder traversal"<<endl;
+    Inorder(root);
+    
+    
+    cout<<"Post ORder traversal"<<endl;
+    PostOrder(root);
+    
+    
 }
