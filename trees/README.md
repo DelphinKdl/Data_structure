@@ -129,10 +129,24 @@ Space complexity is <code>O(n)</code> which is determined by the nodes in the  <
  
  - Postorder: <Left><Right><Visit>
  
- - 2-1: We know in Preorder the traversal is like this <Visit><Left><Right> , so the algorithm is as following,
+ - 2-1: We know in Preorder the traversal is like this <Visit><Left><Right>, so the algorithm is as follows,
  
  1- Visit a root.
  
  2- Recurse on the left sub-tree.
+ 
+ 3- Recurse on the right sub-tree.
 
-3- Recurse on the right sub-tree.
+
+
+The source code for it.
+
+```c++
+char FindMinRec(Node * root){
+if (root->left == NULL){
+return root->data;
+}
+return  FindMinRec(root->left);
+}
+
+```

@@ -64,6 +64,13 @@ char FindMinIter(Node * root){
     return current->data;
 }
 
+void PreOrder(Node * root){
+    if (root == NULL) return ;
+    
+    cout<<root->data<<" ";
+    PreOrder(root->left);
+    PreOrder(root->right);
+}
 char FindMinRec(Node * root){
         if (root->left == NULL){
             return root->data;
@@ -88,6 +95,8 @@ int main () {
    char y =  FindMinRec(root);
     cout<<"Samalest number is "<<x<<endl;
     cout<<"Samallest number recuresuivly is "<<y<<endl;
-    LevelOrder(root);
-    
+//    LevelOrder(root);
+//
+    cout<<"PreORder traversal"<<endl;
+    PreOrder(root);
 }
