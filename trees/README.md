@@ -95,6 +95,26 @@ There are multiple way to traverse a binary tree.
 
 For this algorithm, we visit all nodes on the same level, In order to do that we have to use another data structure which is a <code>queue</code>. 
 
+
+This is the syntax for level order or Breadth first for vising every node in a a tree.
+
+
+```c++
+void levelOrder (Node * root) {
+    if (root == NULL) return ;
+    queue<Node*> Q;
+    Q.push(root); // First is root.
+    while(!Q.empty()){
+        Node * current = Q.front();
+        cout<<current->data<<endl;
+        if (current->left != NULL) Q.push(current->left);
+        if (current->right != NULL) Q.push(current->right);
+        Q.pop();
+    }
+}
+
+```
+
 2- Depth-first can have three ways.
 
  - Preorder: <Visit><Left><Right> 
