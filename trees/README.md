@@ -142,11 +142,11 @@ Space complexity is <code>O(n)</code> which is determined by the nodes in the  <
 The source code for it.
 
 ```c++
-char FindMinRec(Node * root){
-if (root->left == NULL){
-return root->data;
-}
-return  FindMinRec(root->left);
-}
+void PreOrder(Node * root){
+if (root == NULL) return ;
 
+cout<<root->data<<" ";
+PreOrder(root->left);
+PreOrder(root->right);
+}
 ```
