@@ -36,7 +36,7 @@ void print(Node * root) {
   
 }
 
-int FindMin(Node * root){
+int FindMinIter(Node * root){
 //    if (root == NULL){
 //        return root->data;
 //    }
@@ -51,6 +51,13 @@ int FindMin(Node * root){
     
     return current->data;
 }
+
+int FindMinRec(Node * root){
+        if (root->left == NULL){
+            return root->data;
+        }
+       return  FindMinRec(root->left);
+}
 int main () {
     Node * root = NULL ;
     root = insert(15, root);
@@ -58,7 +65,8 @@ int main () {
     root = insert(20, root);
     root = insert(0, root);
     root = insert(25, root);
-   int x =  FindMin(root);
+   int x =  FindMinIter(root);
+//   int y =  FindMinRec(root);
     cout<<"Samalest number is "<<x<<endl;
     
 }
