@@ -35,7 +35,7 @@ void print(Node * root) {
     print(root->left);
   
 }
-void LevelOrder (Node * root) {
+void levelOrder (Node * root) {
     if (root == NULL) return ;
     queue<Node*> Q;
     Q.push(root); // First is root.

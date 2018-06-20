@@ -102,3 +102,11 @@ For this algorithm, we visit all nodes on the same level, In order to do that we
  - Inorder: <Left><Visit><Right>
  
  - Postorder: <Left><Right><Visit>
+ 
+ - 2-1: We know in Preorder the traversal is like this <Visit><Left><Right> , so the algorithm is as following,
+ 
+ 1- Visit a root.
+ 
+ 2- Recurse on the left sub-tree.
+
+3- Recurse on the right sub-tree.
