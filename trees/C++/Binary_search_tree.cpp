@@ -2,22 +2,22 @@
 
 
 #include <iostream>
-
+#include <queue>
 using namespace std ;
 struct Node {
-    int data;
+    char data;
     Node * left ;
     Node * right;
 };
 // note, whenever we worl on trees, recerusion will be the choice
-Node * createNode (int data){
+Node * createNode (char data){
     Node * root = new Node();
     root->data = data;
     root->left = NULL ;
     root->right = NULL ;
     return root;
 }
-Node * insert(int data, Node * root) {
+Node * insert(char data, Node * root) {
     if (root == NULL){
         root = createNode(data);
     } else if (data <= root->data){
@@ -35,8 +35,20 @@ void print(Node * root) {
     print(root->left);
   
 }
+void LevelOrder (Node * root) {
+    if (root == NULL) return ;
+    queue<Node*> Q;
+    Q.push(root); // First is root.
+    while(!Q.empty()){
+        Node * current = Q.front();
+        cout<<current->data<<endl;
+        if (current->left != NULL) Q.push(current->left);
+        if (current->right != NULL) Q.push(current->right);
+        Q.pop();
+    }
+}
 
-int FindMinIter(Node * root){
+char FindMinIter(Node * root){
 //    if (root == NULL){
 //        return root->data;
 //    }
@@ -52,21 +64,30 @@ int FindMinIter(Node * root){
     return current->data;
 }
 
-int FindMinRec(Node * root){
+char FindMinRec(Node * root){
         if (root->left == NULL){
             return root->data;
         }
        return  FindMinRec(root->left);
 }
+
 int main () {
     Node * root = NULL ;
-    root = insert(15, root);
-    root = insert(10, root);
-    root = insert(20, root);
-    root = insert(0, root);
-    root = insert(25, root);
-   int x =  FindMinIter(root);
-//   int y =  FindMinRec(root);
+    root = insert('F', root);
+    root = insert('D', root);
+    root = insert('B', root);
+    root = insert('A', root);
+    root = insert('C', root);
+     root = insert('E', root);
+     root = insert('J', root);
+     root = insert('G', root);
+     root = insert('K', root);
+     root = insert('I', root);
+    root = insert('H', root);
+   char x =  FindMinIter(root);
+   char y =  FindMinRec(root);
     cout<<"Samalest number is "<<x<<endl;
+    cout<<"Samallest number recuresuivly is "<<y<<endl;
+    LevelOrder(root);
     
 }
