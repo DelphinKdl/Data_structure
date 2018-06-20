@@ -73,3 +73,32 @@ A complete binary tree is a  tree that all of their children exactly the frontie
 
 
 a balanced binary tree is  when we have the difference of height of left and right subtrees for every node is not more than k (most 1)
+
+
+## Binary Trees. 
+
+A binary tree is a data structure that has at most 2 nodes to be stored. The parent can have 0, 1, or 2 nodes. 
+
+
+
+### Binary search tree. 
+
+A BST in short, is a type of a binary tree where it nodes values are order which means the lft node has value less than the parent, and the right node has vlaue greater than the parent. 
+
+
+#### Traversing a Binary tree.
+
+There are multiple way to traverse a binary tree. 
+
+
+1- Breadth-first or (level order traversal)
+
+For this algorithm, we visit all nodes on the same level, In order to do that we have to use another data structure which is a <code>queue</code>. 
+
+2- Depth-first can have three ways.
+
+ - Preorder: <Visit><Left><Right> 
+ 
+ - Inorder: <Left><Visit><Right>
+ 
+ - Postorder: <Left><Right><Visit>
