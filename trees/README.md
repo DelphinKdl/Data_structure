@@ -115,6 +115,12 @@ void levelOrder (Node * root) {
 
 ```
 
+
+Time complexity is <code> O(n) </code> since the number of node determines the time.
+
+Space complexity is <code>O(n)</code> which is determined by the nodes in the  <code>queue</code>, so if we have a big tree then each level of this tree will be in the queue unless of course, the tree has a linear structure. 
+
+
 2- Depth-first can have three ways.
 
  - Preorder: <Visit><Left><Right> 
