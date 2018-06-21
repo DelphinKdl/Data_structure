@@ -207,4 +207,23 @@ return;
 Deleting a node in a BST is not straightforward since a BST has to hold for its structures and properties which are left node is less than its parent and right node is greater than its parent.
 
 
-If the node we want to delete is a leaf node from  a BST, then we do not have to any adjacent to the structure of the tree.  
+- If the node we want to delete is a leaf node from  a BST, then we do not have to do any adjacent to the structure of the tree. just clear it from memory
+
+- If not a leaf, then we need to be careful. We cannot just clear it from memory because this node might have children and grand children.
+
+ There are two cases for the above case.
+
+ 1- If the node we want to delete has only one child. In this case, we will make link point to the grand-children.  
+
+ 2- If there are more than one child or exactly two children.
+
+ * For this case, we will follow this approach.
+
+  1- Find the min value in the right sub-tree OR the max value in the left sub-tree.
+
+  2- Copy the value to the targeted node that we want to delete.
+
+
+  ```c++
+  // Code fro deleting a node from a BST 
+  ```
