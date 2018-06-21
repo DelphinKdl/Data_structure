@@ -223,15 +223,14 @@ Deleting a node in a BST is not straightforward since a BST has to hold for its 
 
   2- Copy the value to the targeted node that we want to delete.
 
-
+```c++
 
   Node* FindMin(Node* root)
   {
   	while(root->left != NULL) root = root->left;
   	return root;
   }
-```c++
-  // Function to search a delete a value from tree.
+  
   struct Node* Delete(struct Node *root, int data) {
   	if(root == NULL) return root;
   	else if(data < root->data) root->left = Delete(root->left,data);
