@@ -75,25 +75,25 @@ A complete binary tree is a  tree that all of their children exactly the frontie
 a balanced binary tree is  when we have the difference of height of left and right subtrees for every node is not more than k (most 1)
 
 
-## Binary Trees. 
+## Binary Trees.
 
-A binary tree is a data structure that has at most 2 nodes to be stored. The parent can have 0, 1, or 2 nodes. 
+A binary tree is a data structure that has at most 2 nodes to be stored. The parent can have 0, 1, or 2 nodes.
 
 
 
-### Binary search tree. 
+### Binary search tree.
 
-A BST in short, is a type of a binary tree where it nodes values are order which means the lft node has value less than the parent, and the right node has vlaue greater than the parent. 
+A BST in short, is a type of a binary tree where it nodes values are order which means the lft node has value less than the parent, and the right node has vlaue greater than the parent.
 
 
 #### Traversing a Binary tree.
 
-There are multiple way to traverse a binary tree. 
+There are multiple way to traverse a binary tree.
 
 
 1- Breadth-first or (level order traversal)
 
-For this algorithm, we visit all nodes on the same level, In order to do that we have to use another data structure which is a <code>queue</code>. 
+For this algorithm, we visit all nodes on the same level, In order to do that we have to use another data structure which is a <code>queue</code>.
 
 
 This is the syntax for level order or Breadth first for vising every node in a a tree.
@@ -118,23 +118,23 @@ void levelOrder (Node * root) {
 
 Time complexity is <code> O(n) </code> since the number of node determines the time.
 
-Space complexity is <code>O(n)</code> which is determined by the nodes in the  <code>queue</code>, so if we have a big tree then each level of this tree will be in the queue unless of course, the tree has a linear structure. 
+Space complexity is <code>O(n)</code> which is determined by the nodes in the  <code>queue</code>, so if we have a big tree then each level of this tree will be in the queue unless of course, the tree has a linear structure.
 
 
 2- Depth-first can have three ways.
 
- - Preorder: <Visit><Left><Right> 
- 
+ - Preorder: <Visit><Left><Right>
+
  - Inorder: <Left><Visit><Right>
- 
+
  - Postorder: <Left><Right><Visit>
- 
+
  - 2-1: We know in Preorder algorithm, the traversal is like this <Visit><Left><Right>, so the algorithm is as follows,
- 
+
  1- Visit a root.
- 
+
  2- Recurse on the left sub-tree.
- 
+
  3- Recurse on the right sub-tree.
 
 
@@ -199,3 +199,12 @@ cout<<root->data<<" ";
 return;
 }
 ```
+
+
+### Deleting a node form a BST.
+
+
+Deleting a node in a BST is not straightforward since a BST has to hold for its structures and properties which are left node is less than its parent and right node is greater than its parent.
+
+
+If the node we want to delete is a leaf node from  a BST, then we do not have to any adjacent to the structure of the tree.  
