@@ -100,6 +100,12 @@ char FindMinIter(Node * root){
     
     return current->data;
 }
+bool isBinarySearchTree(Node * root) {
+    // Basically , we need ot check if this tree holds for a BST properties.
+    // They are, left is less than patent, and right is greater than parent.
+    
+    return false;
+}
 
 
 int main () {
