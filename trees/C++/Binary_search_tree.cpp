@@ -9,6 +9,44 @@ struct Node {
     Node * left ;
     Node * right;
 };
+Node* FindMin(Node* root)
+{
+	while(root->left != NULL) root = root->left;
+	return root;
+}
+
+// Function to search a delete a value from tree.
+struct Node* Delete(struct Node *root, int data) {
+	if(root == NULL) return root;
+	else if(data < root->data) root->left = Delete(root->left,data);
+	else if (data > root->data) root->right = Delete(root->right,data);
+	// Wohoo... I found you, Get ready to be deleted
+	else {
+		// Case 1:  No child
+		if(root->left == NULL && root->right == NULL) {
+			delete root;
+			root = NULL;
+		}
+		//Case 2: One child
+		else if(root->left == NULL) {
+			struct Node *temp = root;
+			root = root->right;
+			delete temp;
+		}
+		else if(root->right == NULL) {
+			struct Node *temp = root;
+			root = root->left;
+			delete temp;
+		}
+		// case 3: 2 children
+		else {
+			struct Node *temp = FindMin(root->right);
+			root->data = temp->data;
+			root->right = Delete(root->right,temp->data);
+		}
+	}
+	return root;
+}
 // note, whenever we worl on trees, recerusion will be the choice
 Node * createNode (char data){
     Node * root = new Node();
@@ -33,7 +71,7 @@ void print(Node * root) {
     }
       cout<<root->data<<endl;
     print(root->left);
-  
+
 }
 void levelOrder (Node * root) {
     if (root == NULL) return ;
@@ -52,7 +90,7 @@ void levelOrder (Node * root) {
 
 void PreOrder(Node * root){
     if (root == NULL) return ;
-    
+
     cout<<root->data<<" ";
     PreOrder(root->left);
     PreOrder(root->right);
@@ -90,20 +128,20 @@ char FindMinIter(Node * root){
     //        return root->data;
     //    }
     //   return  FindMin(root->left);
-    
+
     // Iterative solution
-    
+
     Node * current = root ;
     while (current->left != NULL){
         current = current->left ;
     }
-    
+
     return current->data;
 }
 bool isBinarySearchTree(Node * root) {
     // Basically , we need ot check if this tree holds for a BST properties.
     // They are, left is less than patent, and right is greater than parent.
-    
+
     return false;
 }
 
@@ -129,13 +167,13 @@ int main () {
 //
     cout<<"PreORder traversal"<<endl;
     PreOrder(root);
-    
+
     cout<<"InORder traversal"<<endl;
     Inorder(root);
-    
-    
+
+
     cout<<"Post ORder traversal"<<endl;
     PostOrder(root);
-    
-    
+
+
 }
