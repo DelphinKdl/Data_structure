@@ -230,7 +230,7 @@ Deleting a node in a BST is not straightforward since a BST has to hold for its 
   	while(root->left != NULL) root = root->left;
   	return root;
   }
-  
+
   struct Node* Delete(struct Node *root, int data) {
   	if(root == NULL) return root;
   	else if(data < root->data) root->left = Delete(root->left,data);
@@ -264,3 +264,18 @@ Deleting a node in a BST is not straightforward since a BST has to hold for its 
   }
 
 ```
+
+
+## Common problems in Trees
+
+
+-  Recursion
+
+- Traversal
+
+- Balancing
+
+- Deleting
+
+
+And other interview problems.
