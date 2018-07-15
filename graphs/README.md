@@ -120,3 +120,41 @@ If a graph is undirected, then the number of edges: n(n-1)/2
 
 
 Directed-Acyclic-Graph or (DAG): it is a graph with no cycles.
+
+
+## Graph representations: Edge list implementation.
+
+
+The way we implement graphs is by creating a class that represent an edge classes.
+
+
+```cpp
+class Edge {
+  string startVertex ;
+  string endVertex;
+  int weight;
+  // This is only added if edges have weights.
+}
+string vertex_list[MAX_SIZE]; // This is the
+
+Edge edge_list[MAX_SIZE];
+```
+
+
+- Time complexity and space.
+
+
+Space complexity is : O(|V| + |E|)
+
+Some tasks that can be operations"
+
+
+1- Finding if two nodes are connected?
+
+You need to traverse the edges to check that. O(|E|)
+
+
+2- Finding Adjacent nodes:
+
+
+You need to traverse the edges to check that. O(|E|)
