@@ -188,3 +188,13 @@ This approach is preferable iff the graph is dense which has no spars.
 
 
 ## Graph representations: Adjacency List implementation.
+
+
+As we saw before, the adjacency matrix/multi- diminutional arrays. Graphs usually are sparse (less edges). So, we found out that the space was extraordinary more than in adjacency matrix which results to O(V*V), so in a social media website it will be something like 1000000000 * 1000000000 which is a lot of space.
+Note, in real life no one will have a billion friend, so List adjacency list come to help us.
+
+
+The idea is that we do not have to store unnecessary things like 0 (which represent no friends), we can have a a pointer to array or a linked list per cell to represents edges.   This way we can remove the sparseness of this graph which made a huge space complexity.
+
+
+ 
