@@ -158,3 +158,33 @@ You need to traverse the edges to check that. O(|E|)
 
 
 You need to traverse the edges to check that. O(|E|)
+
+
+## Graph representations: Adjacency Matrix implementation.
+
+in Edge list implementation., we found out that there are some running times that are slow since we had to scan the whole edge list to find out some of the most performed operations on graphs.The reason is because the number of edges as we saw before can be extremely large.
+something like O(v^(2)).
+
+Now, we want to develop a faster algorithm for graphs common operations.
+
+This approach is better is time, it optimized the previous one to to O(V).
+
+
+The idea is to create a 2D array which is V*V = edges[v][v].
+
+and then, we we store in each cell either  a 0 or a 1.
+
+We put 1 iff two vertices are connected.
+
+
+Note, if the graph has weight, then instead of 1 we wrote the weight, and instead of a zero we write an INFINITY.
+
+Running times for the previous operations are both: O(|V|).
+
+Note, this approach has a better run time than the previous one, but it has VERY bad space time complexity.
+
+
+This approach is preferable iff the graph is dense which has no spars.
+
+
+## Graph representations: Adjacency List implementation.
