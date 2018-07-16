@@ -224,7 +224,22 @@ The algorithm basically;
 
 8- If so, then repeat part 4.
 
+Do this until the stack is empty.
 
 ### Breadth First Search
 
 This algorithms uses a queue for its implementation.
+
+1- Create a queue.
+
+2- Create vector of type queue elements and call it visited.
+
+3- Start traversing at some vertex.
+
+4-DO not add this vertex to the queue, instead we want to add its adjacent vertices. But, add it to the visited array.
+
+5- add the first vertex to the visited array, and add its adjacent vertices to the queue and also to the visited array.
+
+6- After we add all adjacent vertices of a "this" vertex, then we dequeue elements from the queue.
+
+7-  The dequeuing, change the address or a pointer to point the the dequeued vertex, and repeat 4.
