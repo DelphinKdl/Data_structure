@@ -195,3 +195,36 @@ Note, in real life no one will have a billion friend, so List adjacency list com
 
 
 The idea is that we do not have to store unnecessary things like 0 (which represent no friends), we can have a a pointer to array or a linked list per cell to represents edges. This way we can remove the sparseness of this graph which made a huge space complexity.
+
+
+## Searching a graph.
+
+
+### Depth First Search.
+
+This algorithms uses a stack for its implementation.
+
+This is a high level code for it.
+
+The algorithm basically;
+
+1- Create a stack.
+
+2- Create vector of type stack elements and call it visited.
+
+3- State traversing at some vertex.
+
+4- push the adjacent vertices to the stack and the visited vertices.
+
+5- Keep doing this until we hit a wall (no adjacent vertices to visit).
+
+6- If we hit a wall, start popping items from the stack.
+
+7- While we pop item from the stack, we change the address to the popped item, and check if it has any adjacent vertices that have not been visited.
+
+8- If so, then repeat part 4.
+
+
+### Breadth First Search
+
+This algorithms uses a queue for its implementation.
