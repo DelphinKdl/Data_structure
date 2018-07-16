@@ -194,7 +194,4 @@ As we saw before, the adjacency matrix/multi- diminutional arrays. Graphs usuall
 Note, in real life no one will have a billion friend, so List adjacency list come to help us.
 
 
-The idea is that we do not have to store unnecessary things like 0 (which represent no friends), we can have a a pointer to array or a linked list per cell to represents edges.   This way we can remove the sparseness of this graph which made a huge space complexity.
-
-
- 
+The idea is that we do not have to store unnecessary things like 0 (which represent no friends), we can have a a pointer to array or a linked list per cell to represents edges. This way we can remove the sparseness of this graph which made a huge space complexity.
