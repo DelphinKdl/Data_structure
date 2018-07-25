@@ -28,6 +28,12 @@ public class LinkedList {
             temp = temp.next; 
         }
     }
+    
+
+    public void remove(int x){
+
+    }
+    
     public static void main (String[] args){
         LinkedList list = new LinkedList();
      
