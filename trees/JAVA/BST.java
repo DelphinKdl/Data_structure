@@ -34,7 +34,9 @@ public class BST {
 
 
     }
+    public void recursiveInsertion(){
 
+    }
     public void preorder(Node head){
       if (head == null){
         return;
