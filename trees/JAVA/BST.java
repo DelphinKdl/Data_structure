@@ -41,7 +41,8 @@ public class BST {
           tree.add(3);
           tree.add(11);
           tree.add(19);
-          tree.postOrder(x);
+          // tree.inOrder(x);
+          System.out.println(x);
          // x=  tree.addrec(x,10);
          //  x= tree.addrec(x,2);
          //  x = tree.addrec(x,12);
