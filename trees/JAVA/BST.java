@@ -11,7 +11,7 @@ public class BST {
   public Node addrec(Node root, int data){
     if(root == null){
       root = new Node(data);
-    
+
     }
     else if (data <= root.text){
       root.left = addrec(root.left, data);
@@ -33,22 +33,24 @@ public class BST {
 
     public static void main (String [] args){
       BST tree = new BST();
-      Node x = tree.rootGetter(); 
-        //  tree.add(10);
-        //   tree.add(2);
-        //   tree.add(12);
-        //   tree.add(4);
-        //   tree.add(3);
-        //   tree.add(11);
-        //   tree.add(19);
-         x=  tree.addrec(x,10);
-          x= tree.addrec(x,2);
-          x = tree.addrec(x,12);
-          x= tree.addrec(x,4);
-          x=tree.addrec(x,3);
-          x=tree.addrec(x,11);
-         x= tree.addrec(x,19);
-          x=tree.postOrder(x);
+      Node x = tree.rootGetter();
+          tree.add(10);
+          tree.add(2);
+          tree.add(12);
+          tree.add(4);
+          tree.add(3);
+          tree.add(11);
+          tree.add(19);
+          tree.postOrder(x);
+         // x=  tree.addrec(x,10);
+         //  x= tree.addrec(x,2);
+         //  x = tree.addrec(x,12);
+         //  x= tree.addrec(x,4);
+         //  x=tree.addrec(x,3);
+         //  x=tree.addrec(x,11);
+         // x= tree.addrec(x,19);
+         //  x=
+
 
 
 
