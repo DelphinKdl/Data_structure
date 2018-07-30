@@ -41,8 +41,10 @@ public class BST {
           tree.add(3);
           tree.add(11);
           tree.add(19);
-          // tree.inOrder(x);
-          System.out.println(x);
+          tree.add(21);
+          tree.add(9);
+          tree.inOrder(tree.root);
+
          // x=  tree.addrec(x,10);
          //  x= tree.addrec(x,2);
          //  x = tree.addrec(x,12);
@@ -52,12 +54,34 @@ public class BST {
          // x= tree.addrec(x,19);
          //  x=
 
+         System.out.println(tree.getSize());
+
 
 
 
 
     }
-    public void recursiveInsertion(){
+    public void removeNode(int val){
+      if (this.root == null){
+        System.out.println("Tree is empty");
+        return ;
+      }
+      Node temp = this.root; // iterativsly
+      if (temp != null){
+        if (val < temp.text){
+          //
+          if (temp.text == val){
+
+          }
+          temp = temp.left ;
+        } else if (val > temp.text){
+          //
+          if (temp.text == val){
+
+          }
+          temp = temp.right ;
+        }
+      }
 
     }
     public void preorder(Node head){
@@ -99,14 +123,17 @@ public class BST {
         if (text < trav.text ){
           if (trav.left == null){
             trav.left = temp;
+            this.size++;
             return ;
           }
           trav = trav.left ;
         } else {
           if (trav.right == null){
                   trav.right = temp;
+                    this.size++;
                   return;
           }
+
            trav = trav.right;
         }
 
