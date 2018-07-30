@@ -45,22 +45,12 @@ public class BST {
           tree.add(9);
           tree.inOrder(tree.root);
 
-         // x=  tree.addrec(x,10);
-         //  x= tree.addrec(x,2);
-         //  x = tree.addrec(x,12);
-         //  x= tree.addrec(x,4);
-         //  x=tree.addrec(x,3);
-         //  x=tree.addrec(x,11);
-         // x= tree.addrec(x,19);
-         //  x=
-
-         System.out.println(tree.getSize());
-
 
 
 
 
     }
+    // NOTE DONE
     public void removeNode(int val){
       if (this.root == null){
         System.out.println("Tree is empty");
