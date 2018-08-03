@@ -1,10 +1,12 @@
 public class MinHeap {
     private static int size ; 
     private int minHeap [] ;
+    private int  capacity;
     // Constructor is used 
-    MinHeap(){
+    MinHeap(int capacity){
         size = 0 ;
-
+        this.capacity = capacity;
+        this.minHeap = new int[capacity];
     }
 
     public void add(){
