@@ -39,10 +39,6 @@ public class MaxHeap {
         }
         this.size++;
     } 
-
-    private void leftChildBublle(int index, int val){
-        
-    } 
     public void add(int val){
         // Add at the end
         // Check paranets, if greater than the parent, swap.
@@ -65,7 +61,6 @@ public class MaxHeap {
         } else {
             // LEft child bulbble.
             rightChildBublle(index, val);
-
         }
         
     }
@@ -91,7 +86,6 @@ public class MaxHeap {
         heap.add(10);
         heap.add(16);
         heap.add(17);
-
         heap.print();
     }
 }
