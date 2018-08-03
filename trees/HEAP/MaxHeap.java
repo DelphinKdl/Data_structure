@@ -24,18 +24,19 @@ public class MaxHeap {
     private void swap(int first, int second){
         
     }
-    private void rightChildBublle(int index, int val){
+    private void bubbleUp(int index, int val){
         this.maxHeap[this.size] = val;
         while (index != 0){
-
-            index = index/2;
+            // System.out.println("INDEX: "+index);
+           
             if (maxHeap[index] < val){
-              
               int temp = maxHeap[this.size];
               maxHeap[this.size] = maxHeap[index];
               maxHeap[index] = temp ;
-
+             
             }
+            index = index/2;
+         
         }
         this.size++;
     } 
@@ -54,23 +55,17 @@ public class MaxHeap {
         }
         int index = this.size;
         // maxHeap[this.size++] = val;
-        if (index%2 == 0) { 
-            // this is even. Right child.
-            //RightChildBubble
-            rightChildBublle(index-1, val);
-        } else {
+    
+            // this is even. Right child
             // LEft child bulbble.
-            rightChildBublle(index, val);
-        }
+            bubbleUp(index, val);
+        
         
     }
     public void remove(){
 
     }
 
-    public void removeMin(){
-
-    }
     public void getMin(){
         
     }
@@ -80,12 +75,13 @@ public class MaxHeap {
     }
     public static void main(String [] args){
         MaxHeap heap = new MaxHeap(6);
-
-        heap.add(18);
-        heap.add(15);
-        heap.add(10);
-        heap.add(16);
-        heap.add(17);
+        // 93, 90, 81, 79, 74, 73
+        heap.add(73);
+        heap.add(74);
+        heap.add(81);
+        // heap.add(79);
+        // heap.add(90);
+        // heap.add(93);
         heap.print();
     }
 }
