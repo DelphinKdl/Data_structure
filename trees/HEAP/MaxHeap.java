@@ -4,7 +4,7 @@ public class MaxHeap {
     private int  capacity;
     // Constructor is used 
     MaxHeap(int capacity){
-        size = 0 ;
+        size = 1 ;
         this.capacity = capacity;
         this.maxHeap = new int[capacity];
     }
@@ -25,23 +25,13 @@ public class MaxHeap {
         
     }
     private void bubbleUp(int index, int val){
-         // Store the value in the heap. 
-
-         while (index > 0){
-             if (index%2 == 0){
-                 if (this.maxHeap[index] > this.maxHeap[(index-1)/2]){
-                     int temp = this.maxHeap[index];
-                     this.maxHeap[index] = this.maxHeap[(index-1)/2];
-                     this.maxHeap[(index-1)/2]  = temp;
-                     this.size++; 
-                 }
-             } else if (index%2 != 0){
-                if (this.maxHeap[index]> this.maxHeap[(index)/2]){
+         while (index != 1){
+                if (this.maxHeap[index] > this.maxHeap[(index)/2]){
                     int temp = this.maxHeap[index];
                     this.maxHeap[index] = this.maxHeap[(index)/2];
                     this.maxHeap[(index)/2] = temp;
                     this.size++; 
-                }
+                
              }
              index/=2;
          }
@@ -50,12 +40,12 @@ public class MaxHeap {
         // Add at the end
         // Check paranets, if greater than the parent, swap.
 
-        if (this.size == 0){
-            maxHeap[0] = val ;
+        if (this.size == 1){
+            maxHeap[1] = val ;
             this.size++;
             return; // 
         }
-        if (size == this.capacity){
+        if (size == this.capacity-1){
             doubleArray();
         }
         int index = this.size;
@@ -66,28 +56,22 @@ public class MaxHeap {
     public void remove(){
 
     }
-    private void swapme(int x, int y){
-        int temp = x ; 
-        x = y ; 
-        y = temp ;
-    }
     public int getMin(){
-        return this.maxHeap[0];
+        return this.maxHeap[1];
     }
     public void print(){
-        for (int i= 0 ; i<this.size ; i++)
+        for (int i= 1 ; i<this.size-1 ; i++)
         System.out.println(maxHeap[i]);
     }
     public static void main(String [] args){
-        MaxHeap heap = new MaxHeap(10);
-        // 93, 90, 81, 79, 74, 73
+        MaxHeap heap = new MaxHeap(6);
         heap.add(73);
         heap.add(74);
         heap.add(81);
         heap.add(79);
         heap.add(90);
         heap.add(93);
-        heap.print();
-       
+        // heap.add(94);
+       heap.print();
     }
 }
