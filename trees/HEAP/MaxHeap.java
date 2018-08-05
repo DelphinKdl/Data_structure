@@ -21,23 +21,11 @@ public class MaxHeap {
         }
         
     }
-    private void swap(int first, int second){
-        
-    }
+
     private void bubbleUp(int index, int val){
-        this.maxHeap[this.size] = val;
-        while (index != 0){
-            // System.out.println("INDEX: "+index);
-           
-            if (maxHeap[index] < val){
-              int temp = maxHeap[this.size];
-              maxHeap[this.size] = maxHeap[index];
-              maxHeap[index] = temp ;
-             
-            }
-            index = index/2;
-         
-        }
+        this.maxHeap[this.size] = val ; // Store the value in the heap. 
+
+        System.out.println(this.size);
         this.size++;
     } 
     public void add(int val){
@@ -58,6 +46,7 @@ public class MaxHeap {
     
             // this is even. Right child
             // LEft child bulbble.
+           
             bubbleUp(index, val);
         
         
@@ -82,6 +71,7 @@ public class MaxHeap {
         // heap.add(79);
         // heap.add(90);
         // heap.add(93);
-        heap.print();
+        // heap.print();
+       
     }
 }
