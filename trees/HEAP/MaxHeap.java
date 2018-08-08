@@ -97,6 +97,11 @@ public class MaxHeap {
         heap.add(2);
         heap.add(1);
         heap.add(10);
+   
+        heap.add(1);
+        heap.add(2);
+        heap.remove(1);
+        heap.remove(1);
         // System.out.println("SIZE "+(heap.size-1));
         // heap.remove(2);
         // 8, 5, 6, 3,4, 1, 2,1
