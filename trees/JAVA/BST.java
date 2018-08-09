@@ -46,20 +46,18 @@ public class BST {
           tree.add(23);
           tree.add(27);
 
-          tree.removeNode(tree.root, 23);
+          tree.removeNode(tree.root, 0);
           tree.inOrder(tree.root);
 
 
     }
     Node FindMin(Node temp){
-      if (temp == null){
-        return temp;
-      }
-      return FindMin(temp.left);
+    while(temp.left != null) temp = temp.left;
+    return temp;
     }
     // NOTE DONE
     public Node removeNode(Node head,int val){
-      if (head == null) return root;
+      if (head == null) return head;
       else if (val < head.text) head.left = removeNode(head.left,val);
       else if (val > head.text) head.right = removeNode(head.right,val);
       // We found the son of bitch.
