@@ -34,45 +34,64 @@ public class BST {
     public static void main (String [] args){
       BST tree = new BST();
       Node x = tree.rootGetter();
-          tree.add(10);
-          tree.add(2);
-          tree.add(12);
-          tree.add(4);
+          tree.add(22);
+          tree.add(5);
+          tree.add(25);
           tree.add(3);
-          tree.add(11);
-          tree.add(19);
-          tree.add(21);
+          tree.add(7);
+          tree.add(24);
+          tree.add(26);
+          tree.add(1);
           tree.add(9);
+          tree.add(23);
+          tree.add(27);
+
+          tree.removeNode(tree.root, 23);
           tree.inOrder(tree.root);
 
 
-
-
-
+    }
+    Node FindMin(Node temp){
+      if (temp == null){
+        return temp;
+      }
+      return FindMin(temp.left);
     }
     // NOTE DONE
-    public void removeNode(int val){
-      if (this.root == null){
-        System.out.println("Tree is empty");
-        return ;
-      }
-      Node temp = this.root; // iterativsly
-      if (temp != null){
-        if (val < temp.text){
-          //
-          if (temp.text == val){
-
-          }
-          temp = temp.left ;
-        } else if (val > temp.text){
-          //
-          if (temp.text == val){
-
-          }
-          temp = temp.right ;
+    public Node removeNode(Node head,int val){
+      if (head == null) return root;
+      else if (val < head.text) head.left = removeNode(head.left,val);
+      else if (val > head.text) head.right = removeNode(head.right,val);
+      // We found the son of bitch.
+      else {
+        // Case one:
+        if (head.left == null && head.right == null){
+          head = null ;
+          return head;
+        } // case 2:
+        else if (head.left == null){
+          Node temp = head;
+          head = head.right;
+          temp = null ;
+          return head;
         }
-      }
 
+        else if (head.right == null){
+          Node temp = head;
+          head = head.left;
+          temp = null ;
+          return head;
+        }
+        // Thrid case:
+        else {
+          Node temp = FindMin(head.right);
+          head.text = temp.text;
+          head.right = removeNode(head.right, temp.text);
+          return head;
+        }
+
+      }
+  return head;
     }
     public void preorder(Node head){
       if (head == null){
