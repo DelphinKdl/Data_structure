@@ -13,3 +13,11 @@ public class AVL {
   }
 
 }
+
+
+// We do it later. 
+
+// But generally, it is. 
+
+// Almost like a BST, in fact it is a BST, but it balances itself, so that we do not get into a inear behavior in a BST. 
+
