@@ -8,6 +8,20 @@ public class BST {
     this.size = 0;
     this.root = null;
   }
+  public Node checkd(Node root){
+
+    if (root == null){
+        return root;
+    }
+    
+    if (root.left.text > root.text || root.right.text < root.text){
+        return null; // Wrong
+    }
+    
+    root.left = checkd(root.left);
+    root.right = checkd(root.right);
+    return root;
+}
   public Node addrec(Node root, int data){
     if(root == null){
       root = new Node(data);
@@ -34,20 +48,19 @@ public class BST {
     public static void main (String [] args){
       BST tree = new BST();
       Node x = tree.rootGetter();
-          tree.add(22);
           tree.add(5);
-          tree.add(25);
-          tree.add(3);
-          tree.add(7);
-          tree.add(24);
-          tree.add(26);
+          tree.add(2);
+          tree.add(4);
           tree.add(1);
-          tree.add(9);
-          tree.add(23);
-          tree.add(27);
+          tree.add(3);
+          tree.add(6);
+          tree.add(8);
 
-          tree.removeNode(tree.root, 0);
-          tree.inOrder(tree.root);
+
+          Node temp = tree.checkd(tree.root);
+
+          // tree.removeNode(tree.root, 0);
+          // tree.inOrder(tree.root);
 
 
     }
