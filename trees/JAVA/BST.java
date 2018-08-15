@@ -11,12 +11,12 @@ public class BST {
   public Node checkd(Node root){
 
     if (root == null){
-        return root;
+        return null;
     }
     
-    if (root.left.text > root.text || root.right.text < root.text){
-        return null; // Wrong
-    }
+    // if (root.left.text > root.text || root.right.text < root.text){
+    //     return root; // Wrong
+    // }
     
     root.left = checkd(root.left);
     root.right = checkd(root.right);

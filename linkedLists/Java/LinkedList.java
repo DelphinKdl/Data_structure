@@ -89,7 +89,22 @@ public class LinkedList implements LinkedYarn {
     		temp = temp.next;
     	}
     	
-    }
+	}
+	public Node reverseList(Node head){
+		Node temp = head;
+		Node prev = null ; 
+		Node next ;
+		while(temp != null){
+			next = temp.next;
+			temp.next = prev ;
+			prev = temp;
+
+			temp = next; 
+		}
+		head = prev; // Head move is done at the end. 
+		return head;
+
+	}
    public  boolean contains (String toCheck) {
 	   Node temp = this.head;
 	   while (temp != null) {
@@ -103,7 +118,7 @@ public class LinkedList implements LinkedYarn {
     	return null;
     }
     public void swap (LinkedList other) {
-    	
+    	// Refacotor.
     }
     public void print() {
     	Node temp = this.head ; 
@@ -111,19 +126,23 @@ public class LinkedList implements LinkedYarn {
     		System.out.println(temp.text);
     		temp = temp.next ;
     	}
-    }
+	}
+	public void printMe(Node head){
+		Node temp = head ; 
+    	while(temp != null) {
+    		System.out.println(temp.text);
+    		temp = temp.next ;
+    	}
+	}
 public static void main (String[] args) {
 	// The main method is only for testing.
 	LinkedList list = new LinkedList();
 	list.insert("Aziz"); // edge case for removing.
 	list.insert("FACE");
 	list.insert("Moe");
-	list.insert("FACE");
 	list.insert("BOOK");
-	list.print();
-	System.out.println(list.getSize());
-	System.out.println(list.isEmpty());
-
+	list.head = list.reverseList(list.head);
+	list.printMe(list.head);
 }
 private class Node{
 	private String text;
