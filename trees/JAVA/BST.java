@@ -8,16 +8,32 @@ public class BST {
     this.size = 0;
     this.root = null;
   }
+
+  public boolean isBstUtil(Node root, int max, int min){
+    if (root == null)
+        return true;
+    if (root.text <= min  || root.text > max){
+         return false;
+    }
+    return isBstUtil(root.left, min, root.text) &&
+    isBstUtil(root.right, root.text, max);
+}
+public boolean isValidBST(Node root) {
+    return isBstUtil(root,Integer.MAX_VALUE, Integer.MIN_VALUE);
+}
+
   public Node checkd(Node root){
 
     if (root == null){
         return null;
     }
-    
+
+
+
     // if (root.left.text > root.text || root.right.text < root.text){
     //     return root; // Wrong
     // }
-    
+
     root.left = checkd(root.left);
     root.right = checkd(root.right);
     return root;
@@ -47,21 +63,20 @@ public class BST {
 
     public static void main (String [] args){
       BST tree = new BST();
-      Node x = tree.rootGetter();
-          tree.add(5);
-          tree.add(2);
-          tree.add(4);
-          tree.add(1);
-          tree.add(3);
-          tree.add(6);
-          tree.add(8);
+      // Node x = tree.rootGetter();
+          tree.add(10);
+          tree.add(11);
+          tree.add(19);
+          tree.add(17);
+          tree.add(21);
+          // tree.add(6);
+          // tree.add(8);
 
 
-          Node temp = tree.checkd(tree.root);
-
+      boolean x = tree.isValidBST(tree.root);
           // tree.removeNode(tree.root, 0);
           // tree.inOrder(tree.root);
-
+      System.out.println(x);
 
     }
     Node FindMin(Node temp){
@@ -140,7 +155,7 @@ public class BST {
       }
       Node trav = this.root;
       while(trav != null){
-        if (text < trav.text ){
+        if (text <= trav.text ){
           if (trav.left == null){
             trav.left = temp;
             this.size++;

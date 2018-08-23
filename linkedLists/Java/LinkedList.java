@@ -105,6 +105,34 @@ public class LinkedList implements LinkedYarn {
 		return head;
 
 	}
+	public Node removeNthFromEnd(Node head, int n){
+		head = reverseList(head);
+
+		Node temp = head; 
+		if (n ==1){
+			head = temp.next;
+			temp = null ;
+			return head;
+		}
+		for (int i = 1 ; i<n-1; i++){
+			temp = temp.next; 
+		}
+		Node next = temp.next ; 
+		temp.next = next.next;
+		next = null;
+		head = reverseList(head);
+		return head;
+	}
+	public void reverseRecursvily(Node p){
+		if (p.next == null){
+			this.head = p ; // head points to the last node.
+			return; 
+		}
+		reverseRecursvily(p.next);
+		Node temp = p ; 
+
+
+	}
    public  boolean contains (String toCheck) {
 	   Node temp = this.head;
 	   while (temp != null) {
@@ -141,8 +169,10 @@ public static void main (String[] args) {
 	list.insert("FACE");
 	list.insert("Moe");
 	list.insert("BOOK");
-	list.head = list.reverseList(list.head);
-	list.printMe(list.head);
+	// list.head = list.reverseList(list.head);
+	// list.head = list.removeNthFromEnd(list.head, 1);
+	// list.reverseRecursvily(head);
+	// list.print();
 }
 private class Node{
 	private String text;
