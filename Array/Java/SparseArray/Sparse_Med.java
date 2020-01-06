@@ -1,7 +1,10 @@
 public class Sparse_Med {
   static int[] matchingStrings(String[] strings, String[] queries) {
 
-// Honestly , I think there is a better solution for this. 
+// This is the sol
+// This link to the problem: https://www.hackerrank.com/challenges/sparse-arrays/problem
+
+// Honestly , I think there is a better solution for this.
         int lengthStrings = strings.length;
         int lengthQueries = queries.length;
         int [] lengthOfOcurrences = new int[lengthQueries] ;
