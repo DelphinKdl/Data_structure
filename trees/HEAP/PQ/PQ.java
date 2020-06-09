@@ -1,1 +1,0 @@
-// ALmost like a heap.Instead it is ADT that can have a priority algoruthm however we need.
